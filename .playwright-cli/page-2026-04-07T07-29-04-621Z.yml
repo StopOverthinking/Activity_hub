@@ -1,0 +1,129 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "홈" [ref=e7] [cursor=pointer]:
+        - /url: /teacher
+      - generic [ref=e8]:
+        - generic [ref=e9]: IT
+        - generic [ref=e10]:
+          - paragraph [ref=e11]: Teacher
+          - heading "산업 발달 키워드 연표" [level=1] [ref=e12]
+    - generic [ref=e13]:
+      - button "정답 숨김" [ref=e14] [cursor=pointer]
+      - button "필기" [ref=e15] [cursor=pointer]
+      - button "지우기" [ref=e16] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - heading "키워드 연표" [level=2] [ref=e22]
+          - paragraph [ref=e23]: 원본 활동지 기반 디지털 워크시트
+        - generic [ref=e25]:
+          - generic [ref=e26]: 활동지 재구성
+          - generic [ref=e27]: 1 / 1
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - navigation "industry worksheet variants" [ref=e31]:
+            - button "빈 활동지" [ref=e32] [cursor=pointer]
+            - button "그림 제공" [ref=e33] [cursor=pointer]
+          - generic [ref=e34]:
+            - generic [ref=e35]: 원본처럼 핵심 그림을 함께 보며 키워드를 채우는 형태입니다.
+            - generic [ref=e36]: 교사용 정답 표시
+            - button "입력 지우기" [ref=e37] [cursor=pointer]
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]:
+              - paragraph [ref=e41]: "[사회] 6-1-1-10 우리나라 산업의 발달 과정을 알아볼까요 (37~39쪽)"
+              - heading "키워드 연표" [level=3] [ref=e42]
+            - generic [ref=e43]:
+              - generic [ref=e44]:
+                - generic [ref=e45]: 학년
+                - generic [ref=e46]: 반
+                - generic [ref=e47]: 번
+              - generic [ref=e48]:
+                - generic [ref=e49]: 이름
+                - generic [ref=e50]: 교사용
+          - generic [ref=e51]:
+            - generic [ref=e52]: ●
+            - paragraph [ref=e53]: 핵심 키워드와 그림으로 우리나라의 산업 발달 과정을 나타낸 연표를 완성해 봅시다.
+          - generic [ref=e55]:
+            - generic [ref=e56]: 시기
+            - generic [ref=e57]: 그림
+            - generic [ref=e58]: 우리나라 산업 발달 키워드
+            - generic [ref=e59]:
+              - generic [ref=e60]: 1950년대
+              - img "밀가루와 설탕을 나타내는 그림" [ref=e62]
+              - generic [ref=e63]:
+                - paragraph [ref=e64]:
+                  - generic [ref=e65]: 생활에 필요한 물건을 만드는 산업 발달
+                - paragraph [ref=e66]:
+                  - generic [ref=e67]: 예)
+                  - generic [ref=e68]:
+                    - generic [ref=e69]: 1950년대 예시 1
+                    - generic [ref=e70]: 밀가루
+                  - generic [ref=e71]: ","
+                  - generic [ref=e72]:
+                    - generic [ref=e73]: 1950년대 예시 2
+                    - generic [ref=e74]: 설탕
+                  - generic [ref=e75]: ", 면직물 등"
+            - generic [ref=e76]:
+              - generic [ref=e77]: 1960년대
+              - img "옷, 신발, 가발을 나타내는 그림" [ref=e79]
+              - generic [ref=e80]:
+                - paragraph [ref=e81]:
+                  - generic [ref=e82]:
+                    - generic [ref=e83]: 1960년대 공업 이름
+                    - generic [ref=e84]: 경
+                  - generic [ref=e85]: 공업
+                - paragraph [ref=e86]:
+                  - generic [ref=e87]: (비교적 무게가 가벼운 물건)
+                - paragraph [ref=e88]:
+                  - generic [ref=e89]: ":"
+                  - generic [ref=e90]:
+                    - generic [ref=e91]: 1960년대 예시
+                    - generic [ref=e92]: 신발
+                  - generic [ref=e93]: ", 가발, 의류 등"
+            - generic [ref=e94]:
+              - generic [ref=e95]: 1970년대
+              - img "철강과 조선을 나타내는 그림" [ref=e97]
+              - generic [ref=e98]:
+                - paragraph [ref=e99]:
+                  - generic [ref=e100]:
+                    - generic [ref=e101]: 1970년대 공업 이름
+                    - generic [ref=e102]: 중화학
+                  - generic [ref=e103]: 공업
+                - paragraph [ref=e104]:
+                  - generic [ref=e105]: (무게가 많이 나가는 물건
+                - paragraph [ref=e106]:
+                  - generic [ref=e107]: "& 화학 제품을 만드는 공업)"
+                - paragraph [ref=e108]:
+                  - generic [ref=e109]: =
+                  - generic [ref=e110]:
+                    - generic [ref=e111]: 1970년대 예시 1
+                    - generic [ref=e112]: 철강
+                  - generic [ref=e113]: ","
+                  - generic [ref=e114]:
+                    - generic [ref=e115]: 1970년대 예시 2
+                    - generic [ref=e116]: 조선
+                  - generic [ref=e117]: ", 석유 화학 등"
+            - generic [ref=e118]:
+              - generic [ref=e119]: 1980년대
+              - img "자동차와 기계를 나타내는 그림" [ref=e121]
+              - generic [ref=e122]:
+                - paragraph [ref=e123]:
+                  - generic [ref=e124]:
+                    - generic [ref=e125]: 1980년대 산업 예시 1
+                    - generic [ref=e126]: 자동차
+                  - generic [ref=e127]: ", 정밀 기계,"
+                  - generic [ref=e128]:
+                    - generic [ref=e129]: 1980년대 산업 예시 2
+                    - generic [ref=e130]: 전자
+                  - generic [ref=e131]: 제품 등
+                - paragraph [ref=e132]:
+                  - generic [ref=e133]: 과 관련 있는 산업 발달
+                - paragraph [ref=e134]:
+                  - generic [ref=e135]: ▶ 수출액 증가,
+                  - generic [ref=e136]:
+                    - generic [ref=e137]: 1980년대 산업 발달 결과
+                    - generic [ref=e138]: 생활 수준
+                  - generic [ref=e139]: 향상

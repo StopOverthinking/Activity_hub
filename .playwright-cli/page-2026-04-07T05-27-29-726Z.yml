@@ -1,0 +1,75 @@
+- generic [ref=e30]:
+  - banner [ref=e31]:
+    - generic [ref=e32]:
+      - link "홈" [ref=e33]:
+        - /url: /
+      - generic [ref=e34]:
+        - generic [ref=e35]: ↔
+        - generic [ref=e36]:
+          - paragraph [ref=e37]: Student
+          - heading "6월 민주 항쟁" [level=1] [ref=e38]
+  - main [ref=e39]:
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - heading "6월 민주 항쟁" [level=2] [ref=e44]
+          - paragraph [ref=e45]: 읽기 · 생각 · 연결
+        - generic [ref=e47]: 3 / 3
+      - generic [ref=e49]:
+        - navigation "worksheet sections" [ref=e50]:
+          - button "읽기" [ref=e51] [cursor=pointer]
+          - button "생각" [ref=e52] [cursor=pointer]
+          - button "연결" [ref=e53] [cursor=pointer]
+        - generic [ref=e54]:
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - generic [ref=e73]: "3"
+              - paragraph [ref=e74]: 이야기 속 상황과 실제 역사적 사건을 알맞게 연결해 보세요.
+            - generic [ref=e75]:
+              - generic [ref=e76]: 1개 연결
+              - generic [ref=e77]: 1/6
+              - button "모두 지우기" [ref=e78] [cursor=pointer]
+            - generic [ref=e80]:
+              - img
+              - generic [ref=e81]:
+                - button "① 학생회장을 학생들이 직접 뽑지 못하고 선생님들과 임원들이 정함." [ref=e82] [cursor=pointer]:
+                  - generic [ref=e83]: ①
+                  - generic [ref=e84]: 학생회장을 학생들이 직접 뽑지 못하고 선생님들과 임원들이 정함.
+                - button "② 학생이 학생회장의 약속을 비판하는 글을 게시판에 올렸는데, 글이 지워짐." [ref=e85] [cursor=pointer]:
+                  - generic [ref=e86]: ②
+                  - generic [ref=e87]: 학생이 학생회장의 약속을 비판하는 글을 게시판에 올렸는데, 글이 지워짐.
+                - button "③ 전두광 학생회장과 친한 친구들만 회장 선거에 참여함." [ref=e88] [cursor=pointer]:
+                  - generic [ref=e89]: ③
+                  - generic [ref=e90]: 전두광 학생회장과 친한 친구들만 회장 선거에 참여함.
+                - button "④ 박종선 학생이 학생회의 잘못을 밝히려다 다침." [ref=e91] [cursor=pointer]:
+                  - generic [ref=e92]: ④
+                  - generic [ref=e93]: 박종선 학생이 학생회의 잘못을 밝히려다 다침.
+                - button "⑤ 이하늘 학생이 운동장에서 시위를 하다 다침." [ref=e94] [cursor=pointer]:
+                  - generic [ref=e95]: ⑤
+                  - generic [ref=e96]: 이하늘 학생이 운동장에서 시위를 하다 다침.
+                - button "⑥ 결국 모든 학생이 학생회장을 직접 투표로 뽑게 됨." [ref=e97] [cursor=pointer]:
+                  - generic [ref=e98]: ⑥
+                  - generic [ref=e99]: 결국 모든 학생이 학생회장을 직접 투표로 뽑게 됨.
+              - generic [ref=e100]:
+                - button "㉠ 국민이 직접 대통령을 뽑지 못하고 국회의원들이 뽑던 간선제 제도 유지" [ref=e101] [cursor=pointer]:
+                  - generic [ref=e102]: ㉠
+                  - generic [ref=e103]: 국민이 직접 대통령을 뽑지 못하고 국회의원들이 뽑던 간선제 제도 유지
+                - button "㉡ 전두환이 군사 쿠데타로 권력을 잡고, 국민이 아닌 일부 인물들에 의해 대통령이 됨." [ref=e104] [cursor=pointer]:
+                  - generic [ref=e105]: ㉡
+                  - generic [ref=e106]: 전두환이 군사 쿠데타로 권력을 잡고, 국민이 아닌 일부 인물들에 의해 대통령이 됨.
+                - button "㉢ 경찰 조사 중 고문으로 숨진 박종철 고문치사 사건" [ref=e107] [cursor=pointer]:
+                  - generic [ref=e108]: ㉢
+                  - generic [ref=e109]: 경찰 조사 중 고문으로 숨진 박종철 고문치사 사건
+                - button "㉣ 정부가 국민의 요구를 받아들여 대통령 직선제를 약속함." [ref=e110] [cursor=pointer]:
+                  - generic [ref=e111]: ㉣
+                  - generic [ref=e112]: 정부가 국민의 요구를 받아들여 대통령 직선제를 약속함.
+                - button "㉤ 정부가 언론을 통제하고, 비판적인 기사나 방송을 막았던 일" [ref=e113] [cursor=pointer]:
+                  - generic [ref=e114]: ㉤
+                  - generic [ref=e115]: 정부가 언론을 통제하고, 비판적인 기사나 방송을 막았던 일
+                - button "㉥ 민주화를 요구하는 시위 중 최루탄에 맞아 숨진 이한열 열사 사건" [ref=e116] [cursor=pointer]:
+                  - generic [ref=e117]: ㉥
+                  - generic [ref=e118]: 민주화를 요구하는 시위 중 최루탄에 맞아 숨진 이한열 열사 사건
+          - generic [ref=e67]:
+            - button "이전" [ref=e68] [cursor=pointer]
+            - generic [ref=e69]: 연결
+            - button "다음" [disabled] [ref=e70]

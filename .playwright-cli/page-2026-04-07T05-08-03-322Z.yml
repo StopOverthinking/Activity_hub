@@ -1,0 +1,26 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]: 교
+        - generic [ref=e9]:
+          - paragraph [ref=e10]: Teacher
+          - heading "활동 허브" [level=1] [ref=e11]
+      - generic [ref=e12]:
+        - generic [ref=e13]: 정답 · 필기
+        - generic [ref=e14]: 3개
+    - link "학생" [ref=e26]:
+      - /url: /
+  - main [ref=e16]:
+    - link "모양 찾기" [ref=e17]:
+      - /url: /teacher/activity/shape-pick
+      - generic [ref=e18]: △
+      - generic [ref=e19]: 모양 찾기
+    - link "순서 맞추기" [ref=e20]:
+      - /url: /teacher/activity/pattern-order
+      - generic [ref=e21]: ◇
+      - generic [ref=e22]: 순서 맞추기
+    - link "짝 맞추기" [ref=e23]:
+      - /url: /teacher/activity/pair-flip
+      - generic [ref=e24]: ◎
+      - generic [ref=e25]: 짝 맞추기

@@ -1,0 +1,58 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "홈" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - generic [ref=e9]: IT
+        - generic [ref=e10]:
+          - paragraph [ref=e11]: Student
+          - heading "산업 발달 키워드 연표" [level=1] [ref=e12]
+  - main [ref=e13]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - heading "키워드 연표" [level=2] [ref=e18]
+          - paragraph [ref=e19]: 원본 활동지 기반 디지털 워크시트
+        - generic [ref=e21]:
+          - generic [ref=e22]: 활동지 재구성
+          - generic [ref=e23]: 1 / 1
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - navigation "industry worksheet variants" [ref=e27]:
+            - button "빈 활동지" [ref=e28] [cursor=pointer]
+            - button "그림 제공" [ref=e29] [cursor=pointer]
+          - generic [ref=e30]:
+            - generic [ref=e31]: 원본 1쪽처럼 그림 없이 직접 채우는 형태입니다.
+            - button "입력 지우기" [ref=e32] [cursor=pointer]
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36]: 1950년대 예시 1
+            - textbox "1950년대 예시 1" [ref=e37]
+          - generic [ref=e38]:
+            - generic [ref=e39]: 1950년대 예시 2
+            - textbox "1950년대 예시 2" [ref=e40]
+          - generic [ref=e41]:
+            - generic [ref=e42]: 1960년대 공업 이름
+            - textbox "1960년대 공업 이름" [ref=e43]
+          - generic [ref=e44]:
+            - generic [ref=e45]: 1960년대 예시
+            - textbox "1960년대 예시" [ref=e46]
+          - generic [ref=e47]:
+            - generic [ref=e48]: 1970년대 공업 이름
+            - textbox "1970년대 공업 이름" [ref=e49]
+          - generic [ref=e50]:
+            - generic [ref=e51]: 1970년대 예시 1
+            - textbox "1970년대 예시 1" [ref=e52]
+          - generic [ref=e53]:
+            - generic [ref=e54]: 1970년대 예시 2
+            - textbox "1970년대 예시 2" [ref=e55]
+          - generic [ref=e56]:
+            - generic [ref=e57]: 1980년대 산업 예시 1
+            - textbox "1980년대 산업 예시 1" [ref=e58]
+          - generic [ref=e59]:
+            - generic [ref=e60]: 1980년대 산업 예시 2
+            - textbox "1980년대 산업 예시 2" [ref=e61]
+          - generic [ref=e62]:
+            - generic [ref=e63]: 1980년대 산업 발달 결과
+            - textbox "1980년대 산업 발달 결과" [ref=e64]
