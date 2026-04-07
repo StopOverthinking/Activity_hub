@@ -1,8 +1,19 @@
+import { IndustryDevelopmentBingoActivity } from './IndustryDevelopmentBingoActivity'
 import { IndustryKeywordTimelineQuizActivity } from './IndustryKeywordTimelineQuizActivity'
 import { JuneDemocracyWorksheetActivity } from './JuneDemocracyWorksheetActivity'
 import type { ActivityManifest } from './types'
 
 export const activityRegistry: ActivityManifest[] = [
+  {
+    id: 'industry-development-bingo',
+    title: '우리나라 산업 발달 빙고',
+    shortLabel: '산업 빙고',
+    icon: 'BG',
+    color: '#9b674c',
+    softColor: '#f2dfd3',
+    preview: 'bingo-worksheet',
+    Component: IndustryDevelopmentBingoActivity,
+  },
   {
     id: 'june-democracy-worksheet',
     title: '6월 민주 항쟁 워크시트',

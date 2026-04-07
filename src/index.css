@@ -896,6 +896,286 @@ p {
   font-size: 0.92rem;
 }
 
+.bingo-worksheet {
+  display: grid;
+  gap: 16px;
+}
+
+.bingo-worksheet__toolbar,
+.bingo-worksheet__toolbar-meta,
+.bingo-sheet__subject-row,
+.bingo-sheet__lesson-row,
+.bingo-sheet__identity,
+.bingo-sheet__answer-bank {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bingo-worksheet__toolbar {
+  justify-content: space-between;
+}
+
+.bingo-worksheet__toolbar-meta {
+  justify-content: flex-start;
+}
+
+.bingo-sheet {
+  display: grid;
+  gap: 22px;
+  padding: 24px;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 246, 240, 0.96)),
+    var(--panel);
+  border-color: rgba(155, 103, 76, 0.24);
+}
+
+.bingo-sheet__hero {
+  display: grid;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(249, 240, 232, 0.96)),
+    linear-gradient(90deg, rgba(155, 103, 76, 0.08), rgba(155, 103, 76, 0.02));
+  border: 1px solid rgba(155, 103, 76, 0.24);
+}
+
+.bingo-sheet__subject-row {
+  justify-content: space-between;
+  color: #5f4638;
+  font-weight: 800;
+}
+
+.bingo-sheet__subject {
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(155, 103, 76, 0.12);
+  display: inline-flex;
+  align-items: center;
+}
+
+.bingo-sheet__unit {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: -0.03em;
+}
+
+.bingo-sheet__pages {
+  color: #6c5446;
+  font-size: 0.92rem;
+}
+
+.bingo-sheet__lesson-row {
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.bingo-sheet__lesson-mark {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 22px;
+  background: rgba(155, 103, 76, 0.12);
+  color: #7e543d;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.bingo-sheet__lesson-row h3 {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  letter-spacing: -0.05em;
+  line-height: 1.15;
+}
+
+.bingo-sheet__identity {
+  justify-content: flex-end;
+  color: #514741;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.bingo-sheet__identity strong {
+  min-width: 3.5rem;
+  color: #df4e42;
+  text-align: right;
+}
+
+.bingo-sheet__section {
+  display: grid;
+  gap: 12px;
+}
+
+.bingo-sheet__section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.bingo-sheet__section-title span,
+.bingo-sheet__section-title p {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+}
+
+.bingo-sheet__section-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.bingo-sheet__table {
+  display: grid;
+  border: 2px solid rgba(63, 57, 53, 0.92);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.bingo-sheet__row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1.9fr) minmax(180px, 0.7fr);
+  border-bottom: 1px solid rgba(63, 57, 53, 0.54);
+}
+
+.bingo-sheet__table[data-answer-column='true'] .bingo-sheet__row {
+  grid-template-columns: 56px minmax(0, 1.8fr) minmax(180px, 0.65fr) minmax(120px, 0.45fr);
+}
+
+.bingo-sheet__row:last-child {
+  border-bottom: 0;
+}
+
+.bingo-sheet__number,
+.bingo-sheet__prompt-cell,
+.bingo-sheet__input-cell,
+.bingo-sheet__teacher-answer {
+  min-height: 64px;
+  padding: 12px 14px;
+  border-right: 1px solid rgba(63, 57, 53, 0.54);
+}
+
+.bingo-sheet__teacher-answer {
+  border-right: 0;
+}
+
+.bingo-sheet__number {
+  display: grid;
+  place-items: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.bingo-sheet__prompt-cell,
+.bingo-sheet__input-cell {
+  display: grid;
+  align-content: center;
+}
+
+.bingo-sheet__prompt {
+  line-height: 1.55;
+  font-weight: 600;
+}
+
+.bingo-sheet__initials {
+  color: #df4e42;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.bingo-sheet__answer-input,
+.bingo-sheet__board-input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.bingo-sheet__answer-input {
+  min-height: 42px;
+  padding: 0 0 6px;
+  border-bottom: 2px solid rgba(155, 103, 76, 0.38);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.bingo-sheet__answer-input[data-state='correct'] {
+  border-bottom-color: rgba(63, 143, 95, 0.58);
+  background: linear-gradient(180deg, transparent 70%, rgba(63, 143, 95, 0.12));
+}
+
+.bingo-sheet__answer-input[data-state='wrong'] {
+  border-bottom-color: rgba(201, 107, 95, 0.58);
+  background: linear-gradient(180deg, transparent 70%, rgba(201, 107, 95, 0.12));
+}
+
+.bingo-sheet__answer-input:focus,
+.bingo-sheet__board-input:focus {
+  outline: none;
+}
+
+.bingo-sheet__teacher-answer {
+  display: grid;
+  place-items: center;
+  color: #df4e42;
+  font-size: 1.02rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.bingo-sheet__quiz-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bingo-sheet__board {
+  display: grid;
+  grid-template-columns: repeat(var(--bingo-size), minmax(0, 1fr));
+  border: 2px solid rgba(63, 57, 53, 0.92);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.bingo-sheet__board-cell {
+  display: grid;
+  place-items: center;
+  min-height: 96px;
+}
+
+.bingo-sheet__board-input {
+  min-height: 44px;
+  padding: 0 14px;
+  line-height: 1;
+  font-weight: 700;
+  text-align: center;
+  align-self: center;
+}
+
+.bingo-sheet__answer-bank {
+  justify-content: flex-start;
+}
+
+.bingo-sheet__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .industry-worksheet {
   display: grid;
   gap: 16px;
@@ -1427,4 +1707,43 @@ p {
   .hybrid-quiz-row__text-grid {
     grid-template-columns: 1fr;
   }
+
+  .bingo-worksheet__toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .bingo-sheet__row,
+  .bingo-sheet__table[data-answer-column='true'] .bingo-sheet__row {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+
+  .bingo-sheet__number,
+  .bingo-sheet__prompt-cell {
+    border-bottom: 1px solid rgba(63, 57, 53, 0.54);
+  }
+
+  .bingo-sheet__input-cell,
+  .bingo-sheet__teacher-answer {
+    grid-column: 2;
+  }
+
+  .bingo-sheet__number,
+  .bingo-sheet__prompt-cell,
+  .bingo-sheet__input-cell,
+  .bingo-sheet__teacher-answer {
+    min-height: auto;
+  }
+
+  .bingo-sheet__input-cell {
+    border-right: 0;
+    padding-top: 0;
+  }
+
+  .bingo-sheet__teacher-answer {
+    place-items: start;
+    padding-top: 0;
+    border-right: 0;
+  }
+
 }

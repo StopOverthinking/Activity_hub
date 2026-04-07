@@ -125,6 +125,7 @@
 - Use the same page shell and section navigation pattern as existing activities unless the user asks for a different pattern.
 - Decide section-by-section whether each part is `quiz` or `performance`.
 - If the activity includes quiz sections, implement submit and retry behavior without revealing answers to students.
+- Worksheet-style activities should omit worksheet title and identity headers such as grade, class, number, and name unless the user explicitly asks for them.
 
 ## Before Finishing Work
 - Run `npm run build`.
