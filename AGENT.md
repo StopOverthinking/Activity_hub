@@ -24,11 +24,13 @@
   - one shared activity panel
   - one section navigation row inside the activity
   - one main content flow below
+  - built-in text size controls in the shared activity header
 
 ## Non-Negotiables
 - Use `React + TypeScript + Vite`.
 - Use the shared flat palette and design tokens in `src/index.css`.
 - Wrap every activity in `ActivityShell`.
+- Put activity body content on the shared `ActivityStage` path, usually through `ActivityScreenLayout`, so shared text scaling applies automatically.
 - Prefer shared modules from `src/activity-kit` before creating new UI from scratch.
 - New activities must register through `src/activities/registry.tsx`.
 - Activity-level hub cards must stay neutral; `quiz` and `performance` classification belongs to questions, blocks, or sections inside an activity.
@@ -77,6 +79,9 @@
   - bottom navigation actions
 - Keep the top bar layout stable across activities.
 - The teacher tools must stay in the top bar on the right.
+- Default new activity pages to `ActivityScreenLayout` or an existing `create*Activity` factory that already uses it.
+- Body text enlargement is automatic inside `ActivityStage`; keep UI controls on shared classes such as `pill-button`, `tiny-button`, `chip`, and `worksheet-tab` so those controls stay fixed while content text scales.
+- Keep the stage body on the shared full-height layout path so short activities still occupy the same visual frame as dense ones.
 - Section tabs should remain short pill buttons.
 - Section type labels such as `퀴즈 활동` or `수행 활동` belong inside the activity page, not on the hub.
 
@@ -117,12 +122,14 @@
 - Keep module APIs small and prop-driven.
 - Add only lightweight comments where the intent would otherwise be unclear.
 - Reuse existing tone classes and button styles before inventing new ones.
+- Reuse the shared layout classes in `src/index.css` such as `activity-module`, `activity-module__toolbar`, and the existing worksheet shell classes before creating new layout wrappers.
 - If a new interaction pattern is likely to recur, extract it immediately instead of burying it inside one activity.
 
 ## When Adding a New Activity
 - Register it in `src/activities/registry.tsx`.
 - Match the current hub button format.
 - Use the same page shell and section navigation pattern as existing activities unless the user asks for a different pattern.
+- Prefer extending the existing `createBingoWorksheetActivity`, `createImageTableWorksheetActivity`, and `createStoryThinkMatchWorksheetActivity` paths before writing a bespoke activity screen.
 - Decide section-by-section whether each part is `quiz` or `performance`.
 - If the activity includes quiz sections, implement submit and retry behavior without revealing answers to students.
 - Worksheet-style activities should omit worksheet title and identity headers such as grade, class, number, and name unless the user explicitly asks for them.

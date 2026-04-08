@@ -2,12 +2,25 @@ import type { ReactNode } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { TeacherAnnotationLayer } from './TeacherAnnotationLayer'
+import { usePersistentState } from './usePersistentState'
 import type { ActivityManifest, AppMode } from '../activities/types'
+
+export type ActivityTextScale = 'base' | 'large' | 'xlarge'
+
+const textScaleOptions: Array<{
+  id: ActivityTextScale
+  label: string
+  ariaLabel: string
+}> = [
+  { id: 'base', label: 'A', ariaLabel: 'Base text size' },
+  { id: 'large', label: 'A+', ariaLabel: 'Large text size' },
+  { id: 'xlarge', label: 'A++', ariaLabel: 'Extra large text size' },
+]
 
 type ActivityShellProps = {
   manifest: ActivityManifest
   mode: AppMode
-  children: (state: { showAnswers: boolean }) => ReactNode
+  children: (state: { showAnswers: boolean; textScale: ActivityTextScale }) => ReactNode
 }
 
 export function ActivityShell({
@@ -15,9 +28,13 @@ export function ActivityShell({
   mode,
   children,
 }: ActivityShellProps) {
-  const [showAnswers, setShowAnswers] = useState(mode === 'teacher')
+  const [showAnswers, setShowAnswers] = useState(false)
   const [notesEnabled, setNotesEnabled] = useState(false)
   const [resetSignal, setResetSignal] = useState(0)
+  const [textScale, setTextScale] = usePersistentState<ActivityTextScale>(
+    'ui:activity-text-scale',
+    'base',
+  )
   const homePath = mode === 'teacher' ? '/teacher' : '/'
 
   return (
@@ -26,7 +43,7 @@ export function ActivityShell({
         <header className="topbar panel">
           <div className="topbar__group">
             <Link className="ghost-button" to={homePath}>
-              홈
+              ←
             </Link>
             <div className="topbar__title">
               <span
@@ -42,15 +59,35 @@ export function ActivityShell({
             </div>
           </div>
           <div className="topbar__group topbar__group--actions">
+            <div
+              aria-label="Text size"
+              className="text-scale-controls"
+              role="group"
+            >
+              {textScaleOptions.map((option) => (
+                <button
+                  key={option.id}
+                  aria-label={option.ariaLabel}
+                  aria-pressed={textScale === option.id}
+                  className="text-scale-controls__button"
+                  data-active={textScale === option.id}
+                  onClick={() => setTextScale(option.id)}
+                  type="button"
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
             {mode === 'teacher' ? (
               <>
                 <button
                   className="tiny-button"
                   data-tone="teacher"
-                  onClick={() => setShowAnswers((current) => !current)}
+                  disabled={showAnswers}
+                  onClick={() => setShowAnswers(true)}
                   type="button"
                 >
-                  {showAnswers ? '정답 숨김' : '정답'}
+                  모든 정답 공개
                 </button>
                 <button
                   className="tiny-button"
@@ -77,7 +114,9 @@ export function ActivityShell({
           className="activity-frame panel"
           style={{ ['--accent-color' as string]: manifest.color }}
         >
-          <div className="activity-frame__content">{children({ showAnswers })}</div>
+          <div className="activity-frame__content">
+            {children({ showAnswers, textScale })}
+          </div>
           {mode === 'teacher' ? (
             <TeacherAnnotationLayer enabled={notesEnabled} resetSignal={resetSignal} />
           ) : null}
