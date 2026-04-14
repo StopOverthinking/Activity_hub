@@ -6,6 +6,27 @@ import { getActivityDisplayTitle, type AppMode } from '../activities/types'
 
 const TEACHER_PIN = '8805'
 const TEACHER_AUTH_STORAGE_KEY = 'activity-hub.teacher-auth'
+const ACTIVITY_SECTIONS = [
+  { id: 'korean', label: '국어' },
+  { id: 'math', label: '수학' },
+  { id: 'social', label: '사회' },
+  { id: 'other', label: '그 외' },
+] as const
+
+type ActivitySectionId = (typeof ACTIVITY_SECTIONS)[number]['id']
+
+function getActivitySectionId(subject: string): ActivitySectionId {
+  switch (subject) {
+    case '국어':
+      return 'korean'
+    case '수학':
+      return 'math'
+    case '사회':
+      return 'social'
+    default:
+      return 'other'
+  }
+}
 
 type HubPageProps = {
   mode: AppMode
@@ -14,6 +35,16 @@ type HubPageProps = {
 function HubPage({ mode }: HubPageProps) {
   const oppositePath = mode === 'teacher' ? '/' : '/teacher'
   const oppositeLabel = mode === 'teacher' ? '학생' : '교사'
+  const sectionedActivities = useMemo(
+    () =>
+      ACTIVITY_SECTIONS.map((section) => ({
+        ...section,
+        activities: activityRegistry.filter(
+          (activity) => getActivitySectionId(activity.subject) === section.id,
+        ),
+      })),
+    [],
+  )
 
   return (
     <div className="app-shell">
@@ -33,30 +64,45 @@ function HubPage({ mode }: HubPageProps) {
         </header>
 
         <main className="hub-grid">
-          {activityRegistry.map((activity) => {
-            const activityPath =
-              mode === 'teacher'
-                ? `/teacher/activity/${activity.id}`
-                : `/activity/${activity.id}`
+          {sectionedActivities.map((section) => (
+            <section key={section.id} className="hub-section panel">
+              <header className="hub-section__header">
+                <h2>{section.label}</h2>
+                <span className="hub-section__count">{section.activities.length}</span>
+              </header>
 
-            return (
-              <Link
-                key={activity.id}
-                className="icon-card panel"
-                style={{ ['--card-accent' as string]: activity.color }}
-                to={activityPath}
-              >
-                <span
-                  className="icon-card__glyph"
-                  style={{ backgroundColor: activity.softColor }}
-                  aria-hidden="true"
-                >
-                  {activity.icon}
-                </span>
-                <span className="icon-card__label">{getActivityDisplayTitle(activity)}</span>
-              </Link>
-            )
-          })}
+              <div className="hub-section__list">
+                {section.activities.length > 0 ? (
+                  section.activities.map((activity) => {
+                    const activityPath =
+                      mode === 'teacher'
+                        ? `/teacher/activity/${activity.id}`
+                        : `/activity/${activity.id}`
+
+                    return (
+                      <Link
+                        key={activity.id}
+                        className="icon-card panel"
+                        style={{ ['--card-accent' as string]: activity.color }}
+                        to={activityPath}
+                      >
+                        <span
+                          className="icon-card__glyph"
+                          style={{ backgroundColor: activity.softColor }}
+                          aria-hidden="true"
+                        >
+                          {activity.icon}
+                        </span>
+                        <span className="icon-card__label">{getActivityDisplayTitle(activity)}</span>
+                      </Link>
+                    )
+                  })
+                ) : (
+                  <p className="hub-section__empty">없음</p>
+                )}
+              </div>
+            </section>
+          ))}
         </main>
       </div>
     </div>
@@ -136,9 +182,7 @@ function TeacherAccessGate({ children }: TeacherAccessGateProps) {
               </button>
             </div>
 
-            {hasError ? (
-              <p className="teacher-lock__error">PIN이 올바르지 않습니다.</p>
-            ) : null}
+            {hasError ? <p className="teacher-lock__error">PIN이 올바르지 않습니다.</p> : null}
           </form>
         </section>
       </div>

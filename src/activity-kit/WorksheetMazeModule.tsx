@@ -126,13 +126,6 @@ function createEmptyAnswers(groups: WorksheetMazeSentenceGroup[]) {
   }, {})
 }
 
-function getFullSentence(group: WorksheetMazeSentenceGroup) {
-  return group.template.reduce((sentence, chunk, index) => {
-    const blank = group.blanks[index]
-    return `${sentence}${chunk}${blank?.answer ?? ''}`
-  }, '')
-}
-
 function getCoordinateKey([row, col]: WorksheetMazeCoordinate) {
   return `${row}:${col}`
 }
@@ -175,6 +168,7 @@ export function WorksheetMazeModule({
   const [wrongAttempts, setWrongAttempts] = useState<Record<string, number>>({})
   const [groupStates, setGroupStates] = useState<Partial<Record<string, GroupVisualState>>>({})
   const [revealedGroupIds, setRevealedGroupIds] = useState<string[]>([])
+  const [hiddenGroupIds, setHiddenGroupIds] = useState<string[]>([])
   const [quizPassed, setQuizPassed] = useState(false)
   const [quizMessage, setQuizMessage] = useState(quizInitialMessage)
   const [currentPathIndex, setCurrentPathIndex] = useState(0)
@@ -205,7 +199,8 @@ export function WorksheetMazeModule({
       ).length,
     [answers, sentenceGroups],
   )
-  const isTeacherAnswerMode = mode === 'teacher' && showAnswers
+  const isTeacherMode = mode === 'teacher'
+  const isTeacherAnswerMode = isTeacherMode && showAnswers
   const isMazeUnlocked = quizPassed || isTeacherAnswerMode
   const mazeCompleted = currentPathIndex >= pathSequence.length
   const visitedKeys = useMemo(
@@ -353,6 +348,15 @@ export function WorksheetMazeModule({
   }
 
   const toggleRevealGroup = (groupId: string) => {
+    if (showAnswers) {
+      setHiddenGroupIds((currentIds) =>
+        currentIds.includes(groupId)
+          ? currentIds.filter((currentId) => currentId !== groupId)
+          : [...currentIds, groupId],
+      )
+      return
+    }
+
     setRevealedGroupIds((currentIds) =>
       currentIds.includes(groupId)
         ? currentIds.filter((currentId) => currentId !== groupId)
@@ -431,6 +435,7 @@ export function WorksheetMazeModule({
     setWrongAttempts({})
     setGroupStates({})
     setRevealedGroupIds([])
+    setHiddenGroupIds([])
     setQuizPassed(false)
     setQuizMessage(quizInitialMessage)
     resetMazeState()
@@ -504,7 +509,11 @@ export function WorksheetMazeModule({
         <div className="worksheet-maze__group-list">
           {sentenceGroups.map((group) => {
             const visualState = groupStates[group.id]
-            const answerVisible = mode === 'teacher' && (showAnswers || revealedGroupIds.includes(group.id))
+            const answerVisible =
+              isTeacherMode &&
+              (showAnswers
+                ? !hiddenGroupIds.includes(group.id)
+                : revealedGroupIds.includes(group.id))
 
             return (
               <article
@@ -556,24 +565,31 @@ export function WorksheetMazeModule({
                     const hintMessage = getHintMessage(blank)
                     const widthCh =
                       blank.widthCh ?? Math.max(normalizeAnswer(blank.answer).length, 2) + 1
+                    const inputValue = answerVisible ? blank.answer : answers[blank.id] ?? ''
 
                     return (
                       <span key={blank.id}>
                         <span>{chunk}</span>
                         <span className="worksheet-maze__blank-slot">
                           <span className="worksheet-maze__blank-hint" aria-live="polite">
-                            {hintMessage}
+                            {answerVisible ? '' : hintMessage}
                           </span>
                           <input
                             aria-label={`${group.title} 빈칸 ${index + 1}`}
                             autoComplete="off"
                             className="worksheet-maze__input"
-                            onChange={(event) => updateAnswer(group, blank.id, event.target.value)}
-                            placeholder={blank.placeholder}
+                            data-answer-visible={answerVisible}
+                            onChange={
+                              answerVisible
+                                ? undefined
+                                : (event) => updateAnswer(group, blank.id, event.target.value)
+                            }
+                            placeholder={answerVisible ? undefined : blank.placeholder}
+                            readOnly={answerVisible}
                             spellCheck={false}
                             style={{ ['--blank-ch' as string]: String(widthCh) }}
                             type="text"
-                            value={answers[blank.id] ?? ''}
+                            value={inputValue}
                           />
                         </span>
                       </span>
@@ -581,9 +597,6 @@ export function WorksheetMazeModule({
                   })}
                 </p>
 
-                {answerVisible ? (
-                  <p className="worksheet-maze__teacher-answer">정답: {getFullSentence(group)}</p>
-                ) : null}
               </article>
             )
           })}
