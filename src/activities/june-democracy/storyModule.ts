@@ -1,0 +1,93 @@
+import type { StoryReadingModuleConfig } from '../../activity-kit/StoryReadingModule'
+
+export const juneDemocracyStoryModule = {
+  instruction:
+    '\ub2e4\uc74c \uc774\uc57c\uae30\ub97c \uc77d\uace0, \uc65c \ubbfc\uc8fc\uc8fc\uc758\uac00 \ud544\uc694\ud55c\uc9c0 \uc0dd\uac01\ud574 \ubd05\uc2dc\ub2e4.',
+  paragraphs: [
+    {
+      id: 'story-1',
+      sentences: [
+        {
+          id: 'story-1-1',
+          text:
+            '\uc5b4\ub290 \ud559\uad50\uc5d0\uc11c \ud559\uc0dd\ud68c\uc7a5\uc744 \ud559\uc0dd\ub4e4\uc774 \uc9c1\uc811 \ubf51\uc9c0 \uc54a\uace0, \uc120\uc0dd\ub2d8\ub4e4\uacfc \uc77c\ubd80 \ud559\uc0dd \uc784\uc6d0\ub9cc \ubaa8\uc5ec \uc815\ud558\ub3c4\ub85d \ud588\uc2b5\ub2c8\ub2e4.',
+        },
+        {
+          id: 'story-1-2',
+          text:
+            '\uadf8\ub798\uc11c \ub9ce\uc740 \ud559\uc0dd\ub4e4\uc774 \ubd88\uacf5\ud3c9\ud558\ub2e4\uace0 \ub290\uaf08\uc2b5\ub2c8\ub2e4.',
+        },
+      ],
+    },
+    {
+      id: 'story-2',
+      sentences: [
+        {
+          id: 'story-2-1',
+          text:
+            '\ud559\uc0dd\ud68c\uc7a5\uc740 \ud559\uc0dd\ub4e4\uc758 \uc758\uacac\uc744 \ub4e3\uae30\ubcf4\ub2e4 \uc790\uc2e0\uc758 \uc0dd\uac01\ub9cc \uc55e\uc138\uc6e0\uace0, \ud559\uc0dd\ud68c \uc57d\uc18d\uc744 \ube44\ud310\ud558\ub294 \uae00\uc774 \uac8c\uc2dc\ud310\uc5d0 \uc62c\ub77c\uc624\uc790 \uace7\ubc14\ub85c \uc9c0\uc6cc \ubc84\ub838\uc2b5\ub2c8\ub2e4.',
+        },
+      ],
+    },
+    {
+      id: 'story-3',
+      sentences: [
+        {
+          id: 'story-3-1',
+          text:
+            '\ud68c\uc7a5 \uc120\uac70\ub97c \uc900\ube44\ud560 \ub54c\ub3c4 \uce5c\ud55c \uce5c\uad6c\ub4e4\ub9cc \ucc38\uc5ec\ud558\uac8c \ud558\uba70 \ub2e4\ub978 \ud559\uc0dd\ub4e4\uc758 \uc758\uacac\uc744 \ub9c9\uc558\uc2b5\ub2c8\ub2e4.',
+        },
+        {
+          id: 'story-3-2',
+          text:
+            '\ud559\uc0dd\ub4e4\uc740 \uc774\uac83\uc774 \uacf5\uc815\ud55c \uc120\uac70\uac00 \uc544\ub2c8\ub77c\uace0 \uc0dd\uac01\ud588\uc2b5\ub2c8\ub2e4.',
+        },
+      ],
+    },
+    {
+      id: 'story-4',
+      sentences: [
+        {
+          id: 'story-4-1',
+          text:
+            '\uacb0\uad6d \uba87\uba87 \ud559\uc0dd\ub4e4\uc774 \uc6b4\ub3d9\uc7a5\uc5d0 \ubaa8\uc5ec \uc790\uc720\ub86d\uac8c \uc774\uc57c\uae30\ud558\uc790\uace0 \ud588\uc9c0\ub9cc, \ud559\uc0dd \uc784\uc6d0\ub4e4\uc740 \ud070 \uc18c\ub9ac\ub97c \ub0b4\uc9c0 \ubabb\ud558\uac8c \ud558\uba70 \ud559\uc0dd\ub4e4\uc744 \uc81c\uc9c0\ud588\uc2b5\ub2c8\ub2e4.',
+        },
+      ],
+    },
+    {
+      id: 'story-5',
+      sentences: [
+        {
+          id: 'story-5-1',
+          text:
+            '\uadf8\ub54c \ubc15\uc885\uc120\uc774\ub77c\ub294 \ud559\uc0dd\uc774 \ud559\uc0dd\ud68c\uac00 \uc798\ubabb\ud558\uace0 \uc788\ub2e4\uace0 \ub9d0\ud558\ub824\ub2e4 \ud06c\uac8c \ub2e4\ucce4\uc2b5\ub2c8\ub2e4.',
+        },
+        {
+          id: 'story-5-2',
+          text:
+            '\ud559\uad50\ub294 \uc0ac\uc2e4\uc744 \uc228\uae30\ub824 \ud588\uc9c0\ub9cc \ud559\uc0dd\ub4e4\uc740 \uc9c4\uc2e4\uc744 \uc54c\ub9ac\uace0 \uc2f6\uc5b4 \ud588\uc2b5\ub2c8\ub2e4.',
+        },
+      ],
+    },
+    {
+      id: 'story-6',
+      sentences: [
+        {
+          id: 'story-6-1',
+          text:
+            '\uc774\uc5b4 \uc774\ud55c\uc6b8\uc774\ub77c\ub294 \ud559\uc0dd\ub3c4 \uc2dc\uc704 \ub3c4\uc911 \ub2e4\uce58\ub294 \uc77c\uc774 \uc0dd\uacbc\uace0, \uc774 \uc0ac\uac74\uc740 \ud559\uad50 \uc804\uccb4\uc5d0 \ud070 \ucda9\uaca9\uc744 \uc8fc\uc5c8\uc2b5\ub2c8\ub2e4.',
+        },
+      ],
+    },
+    {
+      id: 'story-7',
+      sentences: [
+        {
+          id: 'story-7-1',
+          text:
+            '\uadf8 \ub4a4 \ub9ce\uc740 \ud559\uc0dd\ub4e4\uc774 \ud568\uaed8 \ubaa9\uc18c\ub9ac\ub97c \ub0b4\uae30 \uc2dc\uc791\ud588\uace0, \ub9c8\uce68\ub0b4 \ubaa8\ub4e0 \ud559\uc0dd\uc774 \uc9c1\uc811 \ud22c\ud45c\ub85c \ud559\uc0dd\ud68c\uc7a5\uc744 \ubf51\ub294 \uc81c\ub3c4\uac00 \uc2dc\uc791\ub418\uc5c8\uc2b5\ub2c8\ub2e4.',
+        },
+      ],
+    },
+  ],
+} satisfies StoryReadingModuleConfig
