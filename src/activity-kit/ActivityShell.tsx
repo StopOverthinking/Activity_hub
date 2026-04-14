@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { TeacherAnnotationLayer } from './TeacherAnnotationLayer'
 import { usePersistentState } from './usePersistentState'
-import type { ActivityManifest, AppMode } from '../activities/types'
+import { getActivityDisplayTitle, type ActivityManifest, type AppMode } from '../activities/types'
 
 export type ActivityTextScale = 'base' | 'large' | 'xlarge'
 
@@ -54,7 +54,7 @@ export function ActivityShell({
               </span>
               <div>
                 <p>{mode === 'teacher' ? 'Teacher' : 'Student'}</p>
-                <h1>{manifest.title}</h1>
+                <h1>{getActivityDisplayTitle(manifest)}</h1>
               </div>
             </div>
           </div>

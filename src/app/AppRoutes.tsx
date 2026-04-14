@@ -2,7 +2,7 @@ import type { FormEvent, ReactNode } from 'react'
 import { useMemo, useState } from 'react'
 import { Link, Navigate, Route, Routes, useParams } from 'react-router-dom'
 import { activityRegistry, getActivityById } from '../activities/registry'
-import type { AppMode } from '../activities/types'
+import { getActivityDisplayTitle, type AppMode } from '../activities/types'
 
 const TEACHER_PIN = '8805'
 const TEACHER_AUTH_STORAGE_KEY = 'activity-hub.teacher-auth'
@@ -53,7 +53,7 @@ function HubPage({ mode }: HubPageProps) {
                 >
                   {activity.icon}
                 </span>
-                <span className="icon-card__label">{activity.title}</span>
+                <span className="icon-card__label">{getActivityDisplayTitle(activity)}</span>
               </Link>
             )
           })}

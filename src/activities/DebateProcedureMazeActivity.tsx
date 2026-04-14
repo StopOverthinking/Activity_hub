@@ -78,8 +78,10 @@ const debateSentenceGroups: WorksheetMazeSentenceGroup[] = [
 const debateMazeDefinition: WorksheetMazeActivityDefinition = {
   manifest: {
     id: 'debate-procedure-maze',
+    subject: '국어',
     title: '토론 절차 활동지와 미로',
     shortLabel: '토론 미로',
+    createdAt: '2026-04-14T09:23:32+09:00',
     icon: 'TM',
     color: '#c46233',
     softColor: '#f2dfd2',

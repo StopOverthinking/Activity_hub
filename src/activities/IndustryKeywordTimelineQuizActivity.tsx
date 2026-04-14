@@ -96,8 +96,10 @@ const timelineRows: ImageTableWorksheetRow[] = [
 const industryKeywordTimelineDefinition: ImageTableWorksheetActivityDefinition = {
   manifest: {
     id: 'industry-keyword-timeline-quiz',
+    subject: '사회',
     title: '산업 발달 키워드 연표',
     shortLabel: '산업 연표',
+    createdAt: '2026-04-09T11:19:39+09:00',
     icon: 'IT',
     color: '#2f7f73',
     softColor: '#d4ebe6',

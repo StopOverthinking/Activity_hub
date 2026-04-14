@@ -11,7 +11,7 @@ export const activityRegistry: ActivityManifest[] = [
   industryDevelopmentBingoManifest,
   juneDemocracyWorksheetManifest,
   industryKeywordTimelineQuizManifest,
-]
+].sort((left, right) => right.createdAt.localeCompare(left.createdAt))
 
 export function getActivityById(id: string) {
   return activityRegistry.find((activity) => activity.id === id)

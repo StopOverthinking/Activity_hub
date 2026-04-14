@@ -93,8 +93,10 @@ const electionSentenceGroups: WorksheetMazeSentenceGroup[] = [
 const electionMazeDefinition: WorksheetMazeActivityDefinition = {
   manifest: {
     id: 'election-importance-maze',
+    subject: '사회',
     title: '선거 중요성 미로',
     shortLabel: '선거 미로',
+    createdAt: '2026-04-14T09:48:30+09:00',
     icon: '선',
     color: '#2f6f8f',
     softColor: '#d9ebf3',

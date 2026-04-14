@@ -122,8 +122,10 @@ const bingoClues: BingoWorksheetClue[] = [
 export const industryDevelopmentBingoDefinition: BingoWorksheetActivityDefinition = {
   manifest: {
     id: 'industry-development-bingo',
+    subject: '사회',
     title: '우리나라 산업 발달 빙고',
     shortLabel: '산업 빙고',
+    createdAt: '2026-04-08T00:00:00+09:00',
     icon: 'BG',
     color: '#9b674c',
     softColor: '#f2dfd3',
